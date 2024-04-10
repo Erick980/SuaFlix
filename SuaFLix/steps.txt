@@ -1,0 +1,20 @@
+SGBD (Sistema de Gerenciamento de Banco de Dados)
+Banco de Dados:
+
+- Database First / SQL 
+- Code First / Migration
+- Model First / Scafffotn old
+
+-------------------Entity Framework Core---------------------------------
+
+- Pomelo (MySQL)
+- Identity (Gestão de Usuário)
+----------------------------------------------------------------------------------
+arrumar csproj. e ErrorView
+-------------------------------Comands------------------------------------------------
+
+dotnet new mvc -o SuaFLix 
+
+dotnet new sln --name SuaFLix
+
+dotnet sln add CleverFlix\SuaFLix.csproj
