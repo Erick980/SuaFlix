@@ -1,6 +1,9 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace SuaFLix.Models;
-{
-    [Table("Movie")]
+
+[Table("Movie")]
 public class Movie
 {
     [Key]
@@ -23,8 +26,25 @@ public class Movie
 
     [Column(TypeName = "Year")]
     [Display(Name = "Ano de Estreia")]
-    public Int16 MovieYear {get; set;}
+    public Int16 MovieYear { get; set; }
+    [Column(TypeName = "smallint(3)")]
+    [Display(Name = "Duração (em minutos)")]
+    [Require(ErrorMessage = "Por favor, informe a Duração")]
+    public Int16 Duration { get; set;}
 
-    
-}
+    [Display(Name = "Classificação Etária")]
+    [Require(ErrorMessage = "Por favor, informe a classificação Etária")]
+    public sbyte AgeRating { get; set; }
+
+    [StringLength(200)]
+    [Display(Name = "Foto")]
+    public string Image { get; set; }
+
+    [NoteMapped]
+    [Display(Name = "Duração")]
+    public string HourDuration { get {
+        return TimeSpan.FromMinutes(Duration).ToString(@"%h'h 'm'min'"); 
+    } }
+
+
 }

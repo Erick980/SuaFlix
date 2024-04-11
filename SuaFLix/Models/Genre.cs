@@ -2,8 +2,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SuaFLix.Models;
-{
-    [Table("Genre")]
+
+
+[Table("Genre")]
 public class Genre
 {
     [Key]
@@ -15,4 +16,4 @@ public class Genre
     [StringLength(30, ErrorMessage = "O nome deve possuir no máximo :")]
     public string Name { get; set; }
 }
-}
+
