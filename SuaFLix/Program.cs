@@ -3,6 +3,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+string conn = builder.Configuration.GetConnectionString("SuaFlix");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

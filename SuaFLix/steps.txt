@@ -18,3 +18,20 @@ dotnet new mvc -o SuaFLix
 dotnet new sln --name SuaFLix
 
 dotnet sln add CleverFlix\SuaFLix.csproj
+
+Pacotes necessários para baixar:
+
+Nuget
+Shift + Ctrl + P
+    pesquisar e instalar:
+        EntityframeworkCore (de acordo com a versão do dotnet)
+        EntityframeworkCore.Design
+        EntityframeworkCore.Tools (Migration)
+        Pomelo.EntityFrameworkCore.MySql
+
+Criar uma pasta Data - AppDbContext
+
+---------------------------------------------------------------------------
+Models representa 1 tabela
+DbSet = conjunto de Dados
+

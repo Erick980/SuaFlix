@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SuaFLix.Models
 {
     [Table("MovieGenre")]
+    // Propriedade de Navegação
     public class MovieGenre
     {
         [Key, Column(Order = 1)]

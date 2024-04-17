@@ -48,8 +48,8 @@ namespace SuaFLix.Models
             get
             {
                 return TimeSpan.FromMinutes(Duration).ToString(@"%h'h 'm'min'");
-            }
-        }
+            } }
 
+        public ICollection<MovieGenre> Genres { get; set; }
     }
 }
