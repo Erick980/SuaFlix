@@ -1,9 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using SuaFLix.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 string conn = builder.Configuration.GetConnectionString("SuaFlix");
+var version = ServerVersion.AutoDetect(conn);
+
+// conexão com o Banco
+builder.Services.AddDbContext<AppDbContext>(
+    opt => opt.UseMySql(conn, version)
+);
 
 var app = builder.Build();
 

@@ -28,10 +28,28 @@ Shift + Ctrl + P
         EntityframeworkCore.Design
         EntityframeworkCore.Tools (Migration)
         Pomelo.EntityFrameworkCore.MySql
+        
 
 Criar uma pasta Data - AppDbContext
+
+Criar a ConnectionmString no arquivo appsettigns.json
+
+Criar o serviço de DbContext no Program.csproj
+ 
+(Scafffotn)
+dotnet tool install -g dotnet-aspnet-codegenerator --version 8.0.1
+
+criar um controller - CRUD:
+dotnet-aspnet-codegenerator controller -name GenresController -m Genre -dc AppDbContext -outDir Controllers -udl
+
+instalar Pacotes:
+Microsoft.VisualStudio.Web.CodeGeneration.Design
+Microsoft.EntityFrameworkCore.SqlServer
+
 
 ---------------------------------------------------------------------------
 Models representa 1 tabela
 DbSet = conjunto de Dados
 
+Create Read Update Delete (CRUD)
+Permite o usuário visualizar, criar, atualizar e deletar as informações. 
