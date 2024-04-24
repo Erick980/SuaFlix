@@ -14,6 +14,7 @@ namespace SuaFLix.Controllers
     {
         private readonly AppDbContext _context;
 
+                             // injeção de depedencia
         public GenresController(AppDbContext context)
         {
             _context = context;

@@ -53,3 +53,11 @@ DbSet = conjunto de Dados
 
 Create Read Update Delete (CRUD)
 Permite o usuário visualizar, criar, atualizar e deletar as informações. 
+
+CRUD:
+
+Create: Create
+READ: Index - Lista
+      Details - Um único Registro
+Update: Edit
+Delete: - Delete
