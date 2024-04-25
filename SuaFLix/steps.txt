@@ -29,7 +29,7 @@ Shift + Ctrl + P
         EntityframeworkCore.Tools (Migration)
         Pomelo.EntityFrameworkCore.MySql
         
-
+------------------------------------------------------------------------------------------------------
 Criar uma pasta Data - AppDbContext
 
 Criar a ConnectionmString no arquivo appsettigns.json
@@ -41,6 +41,7 @@ dotnet tool install -g dotnet-aspnet-codegenerator --version 8.0.1
 
 criar um controller - CRUD:
 dotnet-aspnet-codegenerator controller -name GenresController -m Genre -dc AppDbContext -outDir Controllers -udl
+dotnet-aspnet-codegenerator controller -name MoviesController -m Movie -dc AppDbContext -outDir Controllers -udl
 
 instalar Pacotes:
 Microsoft.VisualStudio.Web.CodeGeneration.Design
@@ -61,3 +62,6 @@ READ: Index - Lista
       Details - Um único Registro
 Update: Edit
 Delete: - Delete
+
+-------------------------------------------------------------------------------------
+
