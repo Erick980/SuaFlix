@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SuaFLix.Data;
 using SuaFLix.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SuaFLix.Controllers;
 
@@ -18,7 +19,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var movies = _context.Movies.ToList();
+        var movies = _context.Movies
+            .Include(m => m.Genres)
+            .ThenInclude(mg => mg.Genre)
+            .ToList();
         return View(movies);
     }
 
