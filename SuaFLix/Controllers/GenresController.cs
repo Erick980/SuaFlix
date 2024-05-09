@@ -27,7 +27,7 @@ namespace SuaFLix.Controllers
         }
 
         // GET: Genres/Details/5
-        public async Task<IActionResult> Details(sbyte? id)
+        public async Task<IActionResult> Details(byte? id)
         {
             if (id == null)
             {
@@ -67,7 +67,7 @@ namespace SuaFLix.Controllers
         }
 
         // GET: Genres/Edit/5
-        public async Task<IActionResult> Edit(sbyte? id)
+        public async Task<IActionResult> Edit(byte? id)
         {
             if (id == null)
             {
@@ -87,7 +87,7 @@ namespace SuaFLix.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(sbyte id, [Bind("Id,Name")] Genre genre)
+        public async Task<IActionResult> Edit(byte id, [Bind("Id,Name")] Genre genre)
         {
             if (id != genre.Id)
             {
@@ -118,7 +118,7 @@ namespace SuaFLix.Controllers
         }
 
         // GET: Genres/Delete/5
-        public async Task<IActionResult> Delete(sbyte? id)
+        public async Task<IActionResult> Delete(byte? id)
         {
             if (id == null)
             {
@@ -138,7 +138,7 @@ namespace SuaFLix.Controllers
         // POST: Genres/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(sbyte id)
+        public async Task<IActionResult> DeleteConfirmed(byte id)
         {
             var genre = await _context.Genres.FindAsync(id);
             if (genre != null)
@@ -150,7 +150,7 @@ namespace SuaFLix.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool GenreExists(sbyte id)
+        private bool GenreExists(byte id)
         {
             return _context.Genres.Any(e => e.Id == id);
         }
