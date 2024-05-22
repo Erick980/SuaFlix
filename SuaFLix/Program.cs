@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SuaFLix.Data;
 
@@ -13,6 +14,12 @@ var version = ServerVersion.AutoDetect(conn);
 builder.Services.AddDbContext<AppDbContext>(
     opt => opt.UseMySql(conn, version)
 );
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(
+    opt => opt.SignIn.RequireConfirmedAccount = false
+)
+.AddEntityFrameworkStores<AppDbContext>()
+.AddDefaultTokenProviders();
 
 var app = builder.Build();
 
