@@ -2,6 +2,8 @@
 using System.Net.Mail;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using SuaFLix.ViewModels;
 
 namespace SuaFLix.Controllers;
 
@@ -10,6 +12,7 @@ public class AccountController : Controller
     private readonly ILogger<AccountController> _logger;
     private readonly SignInManager<IdentityUser> _signInManager;
     private readonly UserManager<IdentityUser> _userManager;
+    private string returnurl;
 
     public AccountController(
         ILogger<AccountController> logger,
@@ -29,6 +32,15 @@ public class AccountController : Controller
             ReturnUrl = returnurl ?? Url.Content("~/")
         };
         return View(login);
+    }
+
+    public IActionResult Register(string returnurl)
+    {
+        RegisterVM register = new()
+        {
+
+        };
+        return View(register);
     }
 
     [HttpPost]
@@ -60,6 +72,11 @@ public class AccountController : Controller
             return false;
         }
     }
+}
+
+internal class RegisterVM
+{
+    public string ReturnUrl { get; internal set; }
 }
 
 internal class ValidateAntiforgeryTokenAttribute : Attribute
